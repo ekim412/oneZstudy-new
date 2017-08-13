@@ -1,0 +1,25 @@
+<%= form_for @profile, url: users_profile_path, :html => { :multipart => true } do |f| %>
+    <div class="form-group">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :birth_date %><br />
+      <%= f.date_select :birth_date, start_year: Date.today.year - 100, end_year: Date.today.year, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :phone_number %>
+      <%= f.text_field :phone_number, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :contact_email %>
+      <%= f.text_field :contact_email, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Update Profile", class: 'btn btn-primary' %>
+    </div>
+<% end %>
